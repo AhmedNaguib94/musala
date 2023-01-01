@@ -1,0 +1,61 @@
+<div class="container" [class.page]="isPageSection">
+  <ng-container [ngSwitch]="state">
+    <ng-container *ngSwitchCase="SectionState.Loading">
+      <div
+        class="state background fade-in"
+        [class.ready-s]="transparentBackground"
+      >
+        <app-spinner></app-spinner>
+        <div *ngIf="loadingLabel" class="loadin-text">
+          <span class="ellipsis">{{ loadingLabel }}</span>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="SectionState.Error">
+      <div
+        class="state background problematic fade-in"
+        [class.ready-s]="transparentBackground"
+      >
+        <div class="error-icon">
+          <img src="./assets/images/error.svg" />
+        </div>
+        <div *ngIf="errorLabel" class="error-message">
+          <span>{{ errorLabel }}</span>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="SectionState.Empty">
+      <div class="state background empty fade-in">
+        <div class="empty-icon">
+          <img [src]="emptyImagePath" />
+        </div>
+        <div *ngIf="emptyLabel" class="empty-message">
+          <span>{{ emptyLabel }}</span>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-container
+      *ngIf="
+        state === SectionState.Ready ||
+        state === SectionState.LoadingTransparent
+      "
+    >
+      <div
+        *ngIf="state === SectionState.LoadingTransparent"
+        class="background transparent"
+        [class.flexible-height]="flexibleHeight"
+      >
+        <app-spinner></app-spinner>
+        <div *ngIf="loadingLabel" class="loadin-text">
+          <span class="ellipsis">{{ loadingLabel }}</span>
+        </div>
+      </div>
+      <div class="fade-in" [class.ready-s]="transparentBackground">
+        <ng-content></ng-content>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>

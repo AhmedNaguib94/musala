@@ -1,0 +1,64 @@
+<div class="container flex column">
+    <div class="header flex align-center justify-space-between">
+      <h3>Peripherals List</h3>
+      <div class="buttons-container flex align-center">
+        <button [routerLink]="'/' + Constants.GATEWAY_LIST_PATH">
+          Gateways
+        </button>
+        <button [routerLink]="'/' + Constants.ADD_EDIT_PERIPHERAL_PATH">
+          Add Peripheral
+        </button>
+      </div>
+    </div>
+    <app-state-section
+      [state]="sectionState"
+      [loadingLabel]="'Loading Peripherals...'"
+      [errorLabel]="
+        'An error occurred while processing your request, Please try again later.'
+      "
+      [emptyLabel]="'This is where you find peripherals.'"
+      emptyImagePath="./assets/images/empty-state.svg"
+    >
+      <div class="table-container flex">
+        <nz-table #basicTable [nzData]="peripherals" [nzFrontPagination]="false">
+          <thead>
+            <tr>
+              <th>UID</th>
+              <th>Vendor</th>
+              <th>Created date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of basicTable.data">
+              <td>
+                <span>{{ data.uid }}</span>
+              </td>
+              <td>
+                <span>{{ data.vendor }}</span>
+              </td>
+              <td>
+                <span>{{ data.created_date | date: 'medium' }}</span>
+              </td>
+              <td>
+                <span>{{ data.status }}</span>
+              </td>
+              <td>
+                <img
+                  [routerLink]="'/' + Constants.ADD_EDIT_PERIPHERAL_PATH + '/' + data.id"
+                  src="assets/images/edit.svg"
+                  alt=""
+                />
+                <img
+                  src="assets/images/delete.svg"
+                  alt=""
+                  (click)="deletePeripheral(data.id)"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </nz-table>
+      </div>
+    </app-state-section>
+  </div>
+  

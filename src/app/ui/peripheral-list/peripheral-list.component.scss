@@ -1,0 +1,37 @@
+.container {
+    min-height: 95vh;
+    background: #FFF;
+    padding: 2%;
+    margin: 1%;
+    border-radius: 20px;
+
+    .header {
+        h3 {
+            color: var(--color-primary);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .buttons-container {
+            gap: 20px;
+            button {
+                background-color: var(--color-primary);
+                color: var(--color-surface-light);
+                padding: 10px 20px;
+                border-radius: 5px;
+                border: 0;
+                cursor: pointer;
+            }
+        }
+    }
+    
+    nz-table {
+        width: 100%;
+        height: 100%;
+
+        img {
+            cursor: pointer;
+            margin-inline-end: 10px;
+        }
+    }
+}

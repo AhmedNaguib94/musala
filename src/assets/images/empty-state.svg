@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="178px" height="128px" viewBox="0 0 178 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 63.1 (101010) - https://sketch.com -->
+    <title>EE9260D6-8C3A-49CD-AE42-71E7A76D033A</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <circle id="path-1" cx="61.5" cy="61.5" r="61.5"></circle>
+    </defs>
+    <g id="web_ui" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Report-Issue_empty-state" transform="translate(-632.000000, -779.000000)">
+            <g id="VisualIcon-Copy" transform="translate(632.000000, 779.000000)">
+                <ellipse id="Oval-Copy-2" fill="#F3EEEE" fill-rule="nonzero" cx="113.178149" cy="122.399819" rx="43.1781487" ry="5.39981851"></ellipse>
+                <g id="Rectangle" transform="translate(52.000000, 0.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#D7E3F1" fill-rule="nonzero" xlink:href="#path-1"></use>
+                    <polygon fill="#E1E7EF" fill-rule="nonzero" mask="url(#mask-2)" points="113.345703 13 128 16 128 137 -9.4765625 139.671875"></polygon>
+                </g>
+                <circle id="Oval-Copy" fill="#F0F0F0" fill-rule="nonzero" style="mix-blend-mode: multiply;" cx="38.5" cy="64.5" r="38.5"></circle>
+                <rect id="Rectangle-Copy-2" stroke="#D7E3F1" stroke-width="1.5" fill="#FFFFFF" fill-rule="nonzero" x="40" y="40" width="83.9375384" height="48.8856624"></rect>
+                <rect id="Rectangle-Copy-3" fill="#F7F0F0" fill-rule="nonzero" x="46" y="47" width="23.6812615" height="16.7767695"></rect>
+                <line x1="77" y1="49.3110708" x2="117.5" y2="49.3110708" id="Line-Copy-8" stroke-opacity="0.573863636" stroke="#D2D0D0" stroke-width="1.5" fill="#D8D8D8" fill-rule="nonzero" stroke-linecap="round"></line>
+                <line x1="46" y1="72.3110708" x2="117.470588" y2="72.3110708" id="Line-Copy-11" stroke-opacity="0.573863636" stroke="#D2D0D0" stroke-width="1.5" fill="#D8D8D8" fill-rule="nonzero" stroke-linecap="round"></line>
+                <line x1="46" y1="77.3110708" x2="117.470588" y2="77.3110708" id="Line-Copy-12" stroke-opacity="0.573863636" stroke="#D2D0D0" stroke-width="1.5" fill="#D8D8D8" fill-rule="nonzero" stroke-linecap="round"></line>
+                <line x1="46" y1="82.3110708" x2="117.470588" y2="82.3110708" id="Line-Copy-13" stroke-opacity="0.573863636" stroke="#D2D0D0" stroke-width="1.5" fill="#D8D8D8" fill-rule="nonzero" stroke-linecap="round"></line>
+                <line x1="77" y1="55.3110708" x2="117.5" y2="55.3110708" id="Line-Copy-9" stroke-opacity="0.573863636" stroke="#D2D0D0" stroke-width="1.5" fill="#D8D8D8" fill-rule="nonzero" stroke-linecap="round"></line>
+                <line x1="77" y1="62.3110708" x2="99.5" y2="62.3110708" id="Line-Copy-10" stroke-opacity="0.573863636" stroke="#D2D0D0" stroke-width="1.5" fill="#D8D8D8" fill-rule="nonzero" stroke-linecap="round"></line>
+                <g id="Group" transform="translate(161.000000, 4.000000)" fill-rule="nonzero" stroke="#E5E5E5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                    <line x1="15.6278537" y1="7.74037288" x2="0" y2="7.74037288" id="Path-2"></line>
+                    <line x1="15.119794" y1="7.7831428" x2="0.369796944" y2="7.92140559" id="Path-2" transform="translate(7.744795, 7.852274) rotate(90.000000) translate(-7.744795, -7.852274) "></line>
+                </g>
+                <g id="Group-Copy" transform="translate(52.000000, 103.000000)" fill-rule="nonzero" stroke="#E5E5E5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                    <line x1="10.1121407" y1="5.65553539" x2="0" y2="5.65553539" id="Path-2"></line>
+                    <line x1="9.62214156" y1="5.06607123" x2="0.0780258148" y2="5.15553539" id="Path-2" transform="translate(4.622142, 5.500000) rotate(90.000000) translate(-4.622142, -5.500000) "></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

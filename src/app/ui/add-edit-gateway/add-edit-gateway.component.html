@@ -1,0 +1,133 @@
+<div class="container flex">
+  <app-state-section
+    [isPageSection]="true"
+    [state]="sectionState"
+    [loadingLabel]="'Loading Gateway'"
+    [errorLabel]="
+      'An error occurred while processing your request, Please try again later.'
+    "
+    emptyImagePath="./assets/images/empty-state.svg"
+  >
+    <form *ngIf="form" [formGroup]="form" class="form flex column">
+      <div class="fields justify-space-between flex wrap">
+        <!-- Serial Number -->
+        <div class="field flex column">
+          <mat-label class="field-label">Serial number</mat-label>
+          <mat-form-field
+            class="input-field select-options"
+            appearance="outline"
+            id="serialNumber"
+          >
+            <input
+              matInput
+              data-testid="serial"
+              type="text"
+              [placeholder]="'Type Serial Number'"
+              formControlName="serialNumber"
+            />
+            <mat-error
+              *ngIf="
+                form.invalid && form.get('serialNumber')?.hasError('required')
+              "
+            >
+              <span>Required</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="fields justify-space-between flex wrap">
+        <!-- Name -->
+        <div class="field flex column">
+          <mat-label class="field-label">Name</mat-label>
+          <mat-form-field
+            class="input-field select-options"
+            appearance="outline"
+            id="name"
+          >
+            <input
+              matInput
+              type="text"
+              [placeholder]="'Type Name'"
+              formControlName="name"
+            />
+            <mat-error
+              *ngIf="form.invalid && form.get('name')?.hasError('required')"
+            >
+              <span>Required</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="fields justify-space-between flex wrap">
+        <!-- IPv4 -->
+        <div class="field flex column">
+          <mat-label class="field-label">IPv4</mat-label>
+          <mat-form-field
+            class="input-field select-options"
+            appearance="outline"
+            id="ip"
+          >
+            <input
+              matInput
+              type="text"
+              [placeholder]="'Type IPv4'"
+              formControlName="ip"
+            />
+            <mat-error
+              *ngIf="form.invalid && form.get('ip')?.hasError('required')"
+            >
+              <span>Required</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="fields justify-space-between flex wrap">
+        <!-- peripheral devices -->
+        <div class="field flex column">
+          <mat-label class="field-label">Peripheral devices</mat-label>
+          <mat-form-field
+            class="input-field select-options"
+            appearance="outline"
+            id="peripheralDevices"
+          >
+            <mat-select
+              multiple
+              formControlName="devices"
+              [placeholder]="'Choose'"
+            >
+              <mat-option
+                *ngFor="let device of peripheralDevicesList"
+                [value]="device.uid"
+                >{{ device.uid }} - {{ device.vendor }}</mat-option
+              >
+            </mat-select>
+            <mat-error
+              *ngIf="form.invalid && form.get('devices')?.hasError('required')"
+            >
+              <span>Required</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="buttons-container flex justify-space-between align-center">
+        <button
+          class="button cancel"
+          [routerLink]="'/' + Constants.GATEWAY_LIST_PATH"
+        >
+          Cancel
+        </button>
+        <button
+          class="button insert"
+          [disabled]="form?.invalid"
+          (click)="onSubmit()"
+        >
+          {{gatewayId ? 'Edit' : 'Insert'}}
+        </button>
+      </div>
+    </form>
+  </app-state-section>
+</div>

@@ -1,0 +1,190 @@
+/* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/theming";
+@import "fonts";
+// Plus imports for other components in your app.
+
+// change even row background color
+// .mat-row:nth-child(odd) {
+//   background-color: var(--color-surface-dark);
+// }
+
+// add bottom border to header
+th.mat-header-cell {
+  color: #abadb1 !important;
+  @extend .font-H5;
+  text-align: start;
+  font-weight: normal;
+}
+
+tr.mat-row {
+  background-color: var(--color-surface-light);
+  border-bottom: 1px solid #f2f2f2;
+
+  &:last-of-type {
+    border: 0;
+  }
+
+  td {
+    color: #010a14;
+    @extend .font-H4;
+  }
+}
+
+tr.mat-header-row {
+  border-top: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+th.mat-header-cell,
+td.mat-cell,
+td.mat-footer-cell {
+  border-bottom-width: 0 !important;
+}
+
+.mat-paginator {
+  background: transparent !important;
+  justify-content: flex-end;
+  display: flex;
+
+  .mat-paginator-outer-container {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .mat-paginator-container {
+    width: fit-content;
+    background-color: var(--color-surface-light);
+  }
+}
+
+.ant-pagination {
+  text-align: right;
+}
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+/* For use in src/lib/core/theming/_palette.scss */
+$md-materialprimary: (
+  50: #fde8e8,
+  100: #fac7c6,
+  200: #f7a1a0,
+  300: #f37b79,
+  400: #f15f5d,
+  500: #c39b32,
+  600: #ec3d3a,
+  700: #e93432,
+  800: #e72c2a,
+  900: #e21e1c,
+  A100: #ffffff,
+  A200: #ffe4e4,
+  A400: #ffb1b1,
+  A700: #ff9897,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #c39b32,
+    A200: #c39b32,
+    A400: #c39b32,
+    A700: #c39b32,
+  ),
+);
+
+$material-app-primary: mat.define-palette($md-materialprimary);
+$material-app-accent: mat.define-palette($md-materialprimary);
+
+// The warn palette is optional (defaults to red).
+$material-app-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$material-app-theme: mat.define-light-theme(
+  $material-app-primary,
+  $material-app-accent,
+  $material-app-warn
+);
+
+.custom-theme-font {
+  $custom-typography: mat.define-typography-config(
+    $font-family: "Roboto",
+  );
+  @include mat.all-component-typographies($custom-typography);
+}
+
+.custom-theme-font-rtl {
+  $custom-typography: mat.define-typography-config(
+    $font-family: "Tajawal",
+  );
+  @include mat.all-component-typographies($custom-typography);
+}
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($material-app-theme);
+
+// Custom Styles
+.mat-select-value {
+  height: 22px;
+  width: calc(100% - 24px);
+  font-size: 16px;
+  line-height: 18px;
+  color: var(--color-primary);
+  vertical-align: middle;
+}
+
+.mat-select-arrow,
+.mat-select-arrow-wrapper {
+  color: var(--color-primary);
+  height: 24px;
+  width: 24px;
+}
+
+.mat-select-trigger {
+  height: 100% !important;
+}
+
+.select-options > div > div.mat-form-field-flex {
+  height: 44px !important;
+}
+
+.select-options > div > div.mat-form-field-flex > div.mat-form-field-infix {
+  padding: 3px 0 7px 0 !important;
+}
+
+.select-options
+  > div
+  > div.mat-form-field-flex
+  > div.mat-form-field-infix
+  > .mat-select
+  > .mat-select-trigger
+  > div.mat-select-arrow-wrapper {
+  transform: translateY(0%) !important;
+  .mat-select-arrow {
+    color: #252121d8 !important;
+  }
+}
+
+.select-options
+  > div
+  > div.mat-form-field-flex
+  > div.mat-form-field-infix
+  > .mat-select
+  > .mat-select-trigger
+  > .mat-select-value {
+  color: #252121d8 !important;
+}

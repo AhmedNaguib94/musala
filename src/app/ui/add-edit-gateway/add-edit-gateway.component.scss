@@ -1,0 +1,79 @@
+@import "../../../styles//global";
+@import "../../../styles/form-controls";
+@import "../../../styles/fonts";
+
+.container {
+    border: 0.25px solid var(--color-surface-medium-emphasis);
+    border-radius: 10px;
+    background: var(--color-surface-light);
+    padding: 20px;
+    height: 100%;
+
+    .header {
+        margin-bottom: 20px;
+
+        img {
+            width: 12px;
+            height: 12px;
+            margin-inline-end: 5px;
+            cursor: pointer;
+        }
+
+        span {
+            @extend .font-H3;
+            font-weight: 600;
+        }
+    }
+
+    .form {
+        .fields {
+            width: 100%;
+
+            .field {
+                width: 49%;
+
+                @include media("<=tablet") {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .buttons-container {
+        width: 50%;
+
+        @include media("<=tablet") {
+            width: 100%;
+        }
+
+        .button {
+            @extend .font-H4;
+            background-color: var(--color-primary);
+            color: var(--color-surface-light);
+            border-radius: 6px;
+            outline: 0;
+            border: 0;
+            padding: 8px 20px;
+            cursor: pointer;
+            width: 48%;
+
+            &.cancel {
+                background-color: #f4f4f4;
+                border: 1px solid #9f9f9f;
+                color: #9f9f9f;
+            }
+
+            &.insert {
+                background-color: var(--color-primary);
+                color: #fff;
+                margin-inline-end: 1%;
+            }
+
+            &:disabled {
+                background-color: var(--color-on-surface-light-emphasis);
+            }
+        }
+    }
+
+
+}

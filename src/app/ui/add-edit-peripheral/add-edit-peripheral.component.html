@@ -1,0 +1,104 @@
+<div class="container flex">
+  <app-state-section
+    [isPageSection]="true"
+    [state]="sectionState"
+    [loadingLabel]="'Loading Peripheral'"
+    [errorLabel]="
+      'An error occurred while processing your request, Please try again later.'
+    "
+    emptyImagePath="./assets/images/empty-state.svg"
+  >
+    <form *ngIf="form" [formGroup]="form" class="form flex column">
+      <div class="fields justify-space-between flex wrap">
+        <!-- UID -->
+        <div class="field flex column">
+          <mat-label class="field-label">UID</mat-label>
+          <mat-form-field
+            class="input-field select-options"
+            appearance="outline"
+            id="uid"
+          >
+            <input
+              matInput
+              type="text"
+              [placeholder]="'Type UID'"
+              formControlName="uid"
+            />
+            <mat-error
+              *ngIf="
+                form.invalid && form.get('uid')?.hasError('required')
+              "
+            >
+              <span>Required</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="fields justify-space-between flex wrap">
+        <!-- Vendor -->
+        <div class="field flex column">
+          <mat-label class="field-label">Vendor</mat-label>
+          <mat-form-field
+            class="input-field select-options"
+            appearance="outline"
+            id="vendor"
+          >
+            <input
+              matInput
+              type="text"
+              [placeholder]="'Type Vendor'"
+              formControlName="vendor"
+            />
+            <mat-error
+              *ngIf="form.invalid && form.get('vendor')?.hasError('required')"
+            >
+              <span>Required</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="fields justify-space-between flex wrap">
+        <!-- Status -->
+        <div class="field flex column">
+          <mat-label class="field-label">Status</mat-label>
+          <mat-form-field
+            class="input-field select-options"
+            appearance="outline"
+            id="status"
+          >
+            <mat-select
+              formControlName="status"
+              [placeholder]="'Choose'"
+            >
+              <mat-option [value]="'online'">Online</mat-option>
+              <mat-option [value]="'offline'">Offline</mat-option>
+            </mat-select>
+            <mat-error
+              *ngIf="form.invalid && form.get('status')?.hasError('required')"
+            >
+              <span>Required</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="buttons-container flex justify-space-between align-center">
+        <button
+          class="button cancel"
+          [routerLink]="'/' + Constants.PERIPHERALS_LIST_PATH"
+        >
+          Cancel
+        </button>
+        <button
+          class="button insert"
+          [disabled]="form?.invalid"
+          (click)="onSubmit()"
+        >
+          {{peripheralId ? 'Edit' : 'Insert'}}
+        </button>
+      </div>
+    </form>
+  </app-state-section>
+</div>

@@ -1,0 +1,63 @@
+<div class="container flex column">
+  <div class="header flex align-center justify-space-between">
+    <h3>Gateways List</h3>
+    <div class="buttons-container flex align-center">
+      <button [routerLink]="'/' + Constants.PERIPHERALS_LIST_PATH">
+        Peripheral devices
+      </button>
+      <button [routerLink]="'/' + Constants.ADD_EDIT_GATEWAY_PATH">
+        Add Gateway
+      </button>
+    </div>
+  </div>
+  <app-state-section
+    [state]="sectionState"
+    [loadingLabel]="'Loading Gateways...'"
+    [errorLabel]="
+      'An error occurred while processing your request, Please try again later.'
+    "
+    [emptyLabel]="'This is where you find gateways.'"
+    emptyImagePath="./assets/images/empty-state.svg"
+  >
+    <div class="table-container flex">
+      <nz-table #basicTable [nzData]="gateways" [nzFrontPagination]="false">
+        <thead>
+          <tr>
+            <th>Serial number</th>
+            <th>Name</th>
+            <th>IPv4</th>
+            <th>Peripheral devices count</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of basicTable.data">
+            <td>
+              <span>{{ data.serialNumber }}</span>
+            </td>
+            <td>
+              <span>{{ data.name }}</span>
+            </td>
+            <td>
+              <span>{{ data.ipv4 }}</span>
+            </td>
+            <td>
+              <span>{{ data.peripheralDevices.length }}</span>
+            </td>
+            <td>
+              <img
+                [routerLink]="'/' + Constants.ADD_EDIT_GATEWAY_PATH + '/' + data.id"
+                src="assets/images/edit.svg"
+                alt=""
+              />
+              <img
+                src="assets/images/delete.svg"
+                alt=""
+                (click)="deleteGateway(data.id)"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </div>
+  </app-state-section>
+</div>

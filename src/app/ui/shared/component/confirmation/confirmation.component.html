@@ -1,0 +1,14 @@
+<div class="container-modal" [ngClass]="{'destructive': confirmData?.type == ConfirmationType.DestructiveAction}" *ngIf="isVisible">
+  <div class="popup">
+    <div class="indicator"></div>
+    <div *ngIf="confirmData?.headerTitle" class="title">{{confirmData?.headerTitle}}</div>
+    <div *ngIf="confirmData?.message" class="message">{{confirmData?.message}}</div>
+    <div *ngIf="confirmData?.checkboxOption" class="checkbox-option">
+      <mat-checkbox #checkbox value="true" (change)="checkboxValue = !checkboxValue">{{ confirmData?.checkboxOption }}</mat-checkbox>
+    </div>
+    <div class="actions">
+      <div class="secondary-action button" (click)="onActionButtonClicked(false, false)">Cancel</div>
+      <div class="primary-action button" (click)="onActionButtonClicked(true, checkboxValue)">Confirm</div>
+    </div>
+  </div>
+</div>
